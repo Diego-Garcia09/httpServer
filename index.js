@@ -13,7 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/proyectos', routerProyecto);
-
+//add = const new = prod.add(req.body)
+//await res.json(new)
 //app.get('/proyectos', controladorProyectos.getAll);
 //app.get('/proyectos/:id', controladorProyectos.getById);
 
