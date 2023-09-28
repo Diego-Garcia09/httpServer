@@ -46,28 +46,8 @@ const crearDonador = function (nuevoDonador) {
     donadores.push(nuevoDonador);
 }
 
-const existeDonador = function(donador) {
-    if(!isNaN(id)){
-        let d = null;
-        d = findByRFC(id);
-        if(d!=null){
-            return true;
-        }
-    }
-    else
-    {
-        let d = null;
-        d = findByName(id);
-        if(d!=null){
-            return true;
-        }
-    }
-    return false;
-}
-
 exports.findAll = findAll;
 exports.findByRFC = findByRFC;
 exports.findByName = findByName;
 exports.crearDonador = crearDonador;
 exports.getProyectos = getProyectos;
-exports.existeDonador = existeDonador;

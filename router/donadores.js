@@ -5,7 +5,6 @@ const controladorDonadores = require('../controladores/controladorDonadores')
 router.get("/", controladorDonadores.getAll);
 router.get("/:identificador", controladorDonadores.getByRFCorName);
 router.get("/:identificador/proyectos", controladorDonadores.getProjects)
-//router.get("/:nombre", controladorDonadores.getByName);
 router.post("/", controladorDonadores.crearDonador);
 
 module.exports = router;

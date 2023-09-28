@@ -5,10 +5,6 @@ const getAll = async function(req, res) {
     await res.json(d);
 };
 
-//const getByName = async function(req, res) {
-//    await res.json(donadores.findByName(req.params.nombre));
-//};
-
 const getByRFCorName = async function(req, res) {
     if (!isNaN(req.params.identificador)) {
         await res.json(donadores.findByRFC(req.params.identificador));
@@ -31,6 +27,5 @@ const crearDonador = async function(req, res) {
 
 exports.getAll = getAll;
 exports.getProjects = getProjects;
-//exports.getByName = getByName;
 exports.getByRFCorName = getByRFCorName;
 exports.crearDonador = crearDonador;

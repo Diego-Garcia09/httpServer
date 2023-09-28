@@ -9,5 +9,5 @@ router.get("/:identificador/donatarios", controladorProyecto.getDonatarios);
 router.post("/", controladorProyecto.crearProyecto);
 router.post("/:identificador/:donador", controladorProyecto.asignarDonador);
 router.post("/donatarios/:identificador/:donatario", controladorProyecto.asignarDonatario);
-//router.post("/", controlador.add)
+
 module.exports = router;

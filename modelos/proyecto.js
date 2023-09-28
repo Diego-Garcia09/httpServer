@@ -66,17 +66,6 @@ const findByName = function (nombre) {
     return n;
 }
 
-const asignarDonatario = function (nuevoDonatario) {
-    if (proyectos.donatario == null || proyectos.donatario == '')
-    {
-        proyectos.donatario == nuevoDonatario;
-    }
-    else
-    {
-        console.log("Ya existe donatario");
-    }
-}
-
 const crearProyecto = function (nuevoProyecto) {
     proyectos.push(nuevoProyecto);
 }
@@ -87,5 +76,4 @@ exports.findById = findById;
 exports.getDonadores = getDonadores;
 exports.getDonatarios = getDonatarios;
 exports.findByIdorName = findByIdorName;
-exports.asignarDonatario = asignarDonatario;
 exports.crearProyecto = crearProyecto;
