@@ -5,9 +5,32 @@ const getAll = async function(req, res) {
     await res.json(d);
 };
 
-const getByRFC = async function(req, res) {
-    await res.json(donadores.findByRFC(req.params.rfc));
+//const getByName = async function(req, res) {
+//    await res.json(donadores.findByName(req.params.nombre));
+//};
+
+const getByRFCorName = async function(req, res) {
+    if (!isNaN(req.params.identificador)) {
+        await res.json(donadores.findByRFC(req.params.identificador));
+    }
+    else
+    {
+        await res.json(donadores.findByName(req.params.identificador));
+    }
 };
 
+const getProjects = async function (req, res) {
+    await res.json(donadores.getProyectos(req.params.identificador));
+}
+
+const crearDonador = async function(req, res) {
+    const nuevoDonador = req.body;
+    donadores.crearDonador(nuevoDonador);
+    res.status(201).json(nuevoDonador);
+}
+
 exports.getAll = getAll;
-exports.getByRFC = getByRFC;
+exports.getProjects = getProjects;
+//exports.getByName = getByName;
+exports.getByRFCorName = getByRFCorName;
+exports.crearDonador = crearDonador;
