@@ -3,14 +3,14 @@ const donadores = [
     {
         rfc: 1,
         nombre: 'Diego',
-        proyectoAsociado: 'Gundam',
+        proyectoAsociado: ['Gundam'],
         imagen: 'diego.jpg',
         donacion: 10000,
     },
     {
         rfc: 2,
         nombre: 'Andre',
-        proyectoAsociado: 'Mini sumo',
+        proyectoAsociado: ['Mini sumo'],
         imagen: 'adnre.jpg',
         donacion: 10000,
     },

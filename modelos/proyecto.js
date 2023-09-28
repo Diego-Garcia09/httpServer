@@ -64,14 +64,9 @@ const findByName = function (nombre) {
     return n;
 }
 
-const asignarDonador = function (nombre) {
-    proyectos.donadores.push(nombre);
-}
-
 exports.findByName = findByName;
 exports.findAll = findAll;
 exports.findById = findById;
 exports.getDonadores = getDonadores;
 exports.getDonatarios = getDonatarios;
 exports.findByIdorName = findByIdorName;
-exports.asignarDonador = asignarDonador;

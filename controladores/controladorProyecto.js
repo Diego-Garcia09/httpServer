@@ -25,13 +25,18 @@ const asignarDonador = async function(req, res) {
     let p = proyectos.findByIdorName(proyecto);
     if(!isNaN(donador)){
         let d = donadores.findByRFC(donador);
+        d.proyectoAsociado.push(p.nombre);
         p.donadores.push(d.nombre);
+        await res.status(201).json(p);
     }
     else
     {
         let d = donadores.findByName(donador);
+        d.proyectoAsociado.push(p.nombre);
         p.donadores.push(d.nombre);
+        await res.status(201).json(p);
     }
+    
 }
 
 exports.getAll = getAll;
