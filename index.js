@@ -3,6 +3,8 @@ const cors = require('cors');
 //const controladorProyectos = require('./controladores/controladorProyecto');
 //const controladorDonadores = require('./controladores/controladorDonadores');
 const routerProyecto = require('./router/proyectos');
+const routerDonadores = require('./router/donadores');
+const routerDonatarios = require('./router/donatarios');
 const app = express();
 const port = 4000;
 
@@ -13,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/proyectos', routerProyecto);
+app.use('/donadores', routerDonadores);
+app.use('/donatarios', routerDonatarios);
 //add = const new = prod.add(req.body)
 //await res.json(new)
 //app.get('/proyectos', controladorProyectos.getAll);

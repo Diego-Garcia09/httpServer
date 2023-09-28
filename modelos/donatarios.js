@@ -1,25 +1,24 @@
 
-const donadores = [{
+const donatarios = [{
     rfc: 1,
     nombre: 'Diego',
     proyectoAsociado: 'Gundam',
     imagen: 'diego.jpg',
-    donacion: 10000,
+
 },
 {
     rfc: 2,
     nombre: 'Andre',
     proyectoAsociado: 'Mini sumo',
     imagen: 'adnre.jpg',
-    donacion: 10000,
 }];
 
 const findAll = function () {
-    return donadores;
+    return donatarios;
 }
 
 const findByRFC = function (rfc) {
-    let d = donadores.find(e => e.rfc == rfc);
+    let d = donatarios.find(e => e.rfc == rfc);
     return d;
 }
 
