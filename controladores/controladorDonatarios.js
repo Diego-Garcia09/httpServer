@@ -6,8 +6,13 @@ const getAll = async function(req, res) {
 };
 
 const getByRFC = async function(req, res) {
-    await res.json(donatarios.findById(req.params.rfc));
+    await res.json(donatarios.findByRFC(req.params.identificador));
 };
+
+const getProyectos = async function(req, res) {
+    await res.json(donatarios.getProyecto(req.params.identificador));
+}
 
 exports.getAll = getAll;
 exports.getByRFC = getByRFC;
+exports.getProyectos = getProyectos;

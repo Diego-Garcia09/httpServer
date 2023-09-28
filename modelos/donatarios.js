@@ -18,9 +18,35 @@ const findAll = function () {
 }
 
 const findByRFC = function (rfc) {
-    let d = donatarios.find(e => e.rfc == rfc);
+    if(!isNaN(rfc)){
+        let d = donatarios.find(e => e.rfc == rfc);
+        return d;
+    }
+    else
+    {
+        let d = findByName(rfc);
+        return d;
+    }
+}
+
+const getProyecto = function (id) {
+    if(!isNaN(id)){
+        let d = findByRFC(id);
+        return d.proyectoAsociado;
+    }
+    else
+    {
+        let d = findByName(id);
+        return d.proyectoAsociado;
+    }
+}
+
+const findByName = function (nombre) {
+    let d = donatarios.find(e => e.nombre == nombre);
     return d;
 }
 
 exports.findAll = findAll;
 exports.findByRFC = findByRFC;
+exports.findByName = findByName;
+exports.getProyecto = getProyecto;
