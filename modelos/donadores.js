@@ -11,7 +11,7 @@ const donadores = [
         rfc: 2,
         nombre: 'Andre',
         proyectoAsociado: ['Mini sumo'],
-        imagen: 'adnre.jpg',
+        imagen: 'andre.jpg',
         donacion: 10000,
     },
 ];

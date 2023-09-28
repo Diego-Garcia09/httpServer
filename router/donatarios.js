@@ -5,5 +5,6 @@ const controladorDonatarios = require('../controladores/controladorDonatarios')
 router.get("/", controladorDonatarios.getAll);
 router.get("/:identificador", controladorDonatarios.getByRFC);
 router.get("/:identificador/proyectos", controladorDonatarios.getProyectos);
-//router.post("/", controlador.add)
+router.post("/", controladorDonatarios.crearDonatario);
+
 module.exports = router;

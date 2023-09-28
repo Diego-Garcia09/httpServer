@@ -4,8 +4,9 @@ const proyectos = [{
     nombre: 'Mini sumo',
     descripcion: 'Robot mini sumo para competencias',
     imagen: 'mini_sumo.jpg',
-    donatario: 'Diego',
+    donatario: null,
     donadores: ['Andre'],
+    donacion: 100000,
 },
 {
     id: 2,
@@ -14,6 +15,7 @@ const proyectos = [{
     imagen: 'gundam.jpg',
     donatario: 'Andre',
     donadores: ['Diego'],
+    donacion: 2000000,
 }];
 
 const findAll = function() {
@@ -64,9 +66,26 @@ const findByName = function (nombre) {
     return n;
 }
 
+const asignarDonatario = function (nuevoDonatario) {
+    if (proyectos.donatario == null || proyectos.donatario == '')
+    {
+        proyectos.donatario == nuevoDonatario;
+    }
+    else
+    {
+        console.log("Ya existe donatario");
+    }
+}
+
+const crearProyecto = function (nuevoProyecto) {
+    proyectos.push(nuevoProyecto);
+}
+
 exports.findByName = findByName;
 exports.findAll = findAll;
 exports.findById = findById;
 exports.getDonadores = getDonadores;
 exports.getDonatarios = getDonatarios;
 exports.findByIdorName = findByIdorName;
+exports.asignarDonatario = asignarDonatario;
+exports.crearProyecto = crearProyecto;

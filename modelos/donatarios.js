@@ -2,14 +2,14 @@
 const donatarios = [{
     rfc: 1,
     nombre: 'Diego',
-    proyectoAsociado: 'Gundam',
+    proyectoAsociado: ['Gundam'],
     imagen: 'diego.jpg',
 
 },
 {
     rfc: 2,
     nombre: 'Andre',
-    proyectoAsociado: 'Mini sumo',
+    proyectoAsociado: ['Mini sumo'],
     imagen: 'adnre.jpg',
 }];
 
@@ -46,7 +46,12 @@ const findByName = function (nombre) {
     return d;
 }
 
+const crearDonatario = function (nuevoDonatario) {
+    donatarios.push(nuevoDonatario);
+}
+
 exports.findAll = findAll;
 exports.findByRFC = findByRFC;
 exports.findByName = findByName;
 exports.getProyecto = getProyecto;
+exports.crearDonatario = crearDonatario;

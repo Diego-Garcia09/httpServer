@@ -1,5 +1,6 @@
 const proyectos = require('../modelos/proyecto');
 const donadores = require('../modelos/donadores');
+const donatarios = require('../modelos/donatarios');
 
 const getAll = async function(req, res) {
     let p = proyectos.findAll();
@@ -36,7 +37,36 @@ const asignarDonador = async function(req, res) {
         p.donadores.push(d.nombre);
         await res.status(201).json(p);
     }
-    
+}
+
+const asignarDonatario = async function(req, res) {
+    const proyecto = req.params.identificador;
+    const donatario = req.params.donatario;
+
+    let p = proyectos.findByIdorName(proyecto);
+    if(!isNaN(donatario)){
+        let d = donatarios.findByRFC(donatario);
+        if(p.donatario==null || p.donatario==""){
+            d.proyectoAsociado.push(p.nombre);
+            p.donatario=d.nombre;
+        }
+        await res.status(201).json(p);
+    }
+    else
+    {
+        let d = donatarios.findByName(donatario);
+        if(p.donatario==null || p.donatario==""){
+            d.proyectoAsociado.push(p.nombre);
+            p.donatario=d.nombre;
+        }
+        await res.status(201).json(p);
+    }
+}
+
+const crearProyecto = async function(req, res) {
+    const nuevoProyecto = req.body;
+    proyectos.crearProyecto(nuevoProyecto);
+    res.status(201).json(nuevoProyecto);
 }
 
 exports.getAll = getAll;
@@ -44,3 +74,5 @@ exports.getById = getById;
 exports.getDonadores = getDonadores;
 exports.getDonatarios = getDonatarios;
 exports.asignarDonador = asignarDonador;
+exports.asignarDonatario = asignarDonatario;
+exports.crearProyecto = crearProyecto;
